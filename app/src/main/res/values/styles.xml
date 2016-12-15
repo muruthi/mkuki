@@ -13,8 +13,20 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.NoActionBar.Picture">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/colorBlackTransparent65</item>
+        <item name="android:colorBackground">@color/colorBlackTransparent65</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Button" parent="Widget.AppCompat.Button.Colored"/>
+
+    <style name="Button.Primary">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
 
 </resources>

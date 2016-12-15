@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Today"
-    android:paddingTop="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
-    style="@style/TextAppearance.AppCompat.Body2"
-    tools:showIn="@layout/content_main" />
+    android:textColor="?android:textColorPrimary"
+    style="@style/TextAppearance.AppCompat.Body2"/>

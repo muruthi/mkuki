@@ -8,8 +8,7 @@
     android:padding="16dp"
     android:elevation="2dp"
     android:background="@color/colorWhite"
-    android:foreground="?attr/selectableItemBackground"
-    tools:showIn="@layout/content_main">
+    android:foreground="?attr/selectableItemBackground">
     <ImageView
         android:id="@+id/image_view_thumbnail"
         android:layout_width="60dp"

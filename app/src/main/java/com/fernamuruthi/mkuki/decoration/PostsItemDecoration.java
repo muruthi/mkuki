@@ -1,4 +1,4 @@
-package com.fernamuruthi.mkuki.api.decoration;
+package com.fernamuruthi.mkuki.decoration;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -7,26 +7,21 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
 import android.view.View;
 
 import com.fernamuruthi.mkuki.R;
-import com.fernamuruthi.mkuki.api.adapter.PostsAdapter;
-import com.fernamuruthi.mkuki.api.model.Post;
-import com.fernamuruthi.mkuki.api.model.Posts;
-
-import java.util.ArrayList;
+import com.fernamuruthi.mkuki.adapter.PostsAdapter;
 
 /**
  * Created by 001590 on 2016-11-25.
  */
 
-public class ItemDecoration extends RecyclerView.ItemDecoration {
+public class PostsItemDecoration extends RecyclerView.ItemDecoration {
 
     private Resources r;
     private Drawable mDivider;
 
-    public ItemDecoration(Context context) {
+    public PostsItemDecoration(Context context) {
         r = context.getResources();
         mDivider = ContextCompat.getDrawable(context, R.drawable.divider_line);
     }
@@ -45,15 +40,19 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
             outRect.left = getDp(8);
             outRect.right = getDp(8);
             outRect.bottom = getDp(8);
-        }
-        else if(position+1<=finalPosition){
+        } else if(viewType==0||viewType==PostsAdapter.VIEW_TYPE_PROGRESS_BAR){
+            outRect.top = getDp(16);
+            outRect.left = getDp(16);
+            outRect.right = getDp(16);
+            outRect.bottom = getDp(16);
+        }else if(position+1<=finalPosition){
             int viewTypeNext = parent.getAdapter().getItemViewType(position+1);
             if(PostsAdapter.VIEW_TYPE_TRENDING==viewTypeNext){
                 outRect.bottom = getDp(8);
             }
         }
 
-        if(parent.getChildAdapterPosition(view) == finalPosition)
+        if(parent.getChildAdapterPosition(view) == finalPosition && viewType!=PostsAdapter.VIEW_TYPE_PROGRESS_BAR)
             outRect.bottom = getDp(8);
     }
 
